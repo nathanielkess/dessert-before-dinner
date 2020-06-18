@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { onCategoriesRequested, onMealsRequested, onRecipeRequested } from './../../state/recipes/recipes.actions';
 import { CategoriesList } from './../components/categories-list';
 import { pluckCategories } from './../../state/recipes/recipes.selectors';
-import { MealsByCategory } from '../components/meals-by-category';
-import { Recipe } from '../components/recipe';
+import { MealsByCategory } from './../components/meals-by-category';
+import { Recipe } from './../components/recipe';
 
 export const RecipesScreen = () => {
   const dispatch = useDispatch()
@@ -27,7 +27,7 @@ export const RecipesScreen = () => {
   }
 
   return (
-    <>
+    <div className="mx-auto max-w-lg">
       <CategoriesList 
         categories={categories} 
         selectedCategory={selectedCategoryName} 
@@ -35,6 +35,6 @@ export const RecipesScreen = () => {
       />
       <Recipe id={selectedMealId} />
       <MealsByCategory onMealSelected={handleMealSelected} category={selectedCategoryName} />
-    </>
+    </div>
   )
 }

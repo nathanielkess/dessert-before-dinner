@@ -1,6 +1,6 @@
-import { compose, prop, head, not, isEmpty, props } from 'ramda';
+import { compose, prop, head, not, isEmpty, isNil } from 'ramda';
 
-const notEmptyString = str => not(isEmpty(str));
+const notEmptyString = str => not(isEmpty(str)) && not(isNil(str))
 
 const ingredientsToArray = recipe => {
   let ingredients = [];
@@ -23,13 +23,10 @@ const instructionsToArray = ({strInstructions, ...rest}) => ({
   ...rest,
 })
 
-export const transformRecipe = (payload) => {
-  const rtn = compose(
-    ({ instructions, ingredients, idMeal }) => ({instructions, ingredients, id: idMeal}),
-    instructionsToArray,
-    ingredientsToArray,
-    head,
-    prop('meals')
-  )(payload);
-  return rtn;
-}
+export const transformRecipe = compose(
+  ({ instructions, ingredients, idMeal }) => ({instructions, ingredients, id: idMeal}),
+  instructionsToArray,
+  ingredientsToArray,
+  head,
+  prop('meals')
+)
