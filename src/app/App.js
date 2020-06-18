@@ -1,12 +1,13 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './state/store';
 
+import { RecipesScreen } from './ui/screens/recipes.screen';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <p>App!</p>
-    </div>
-  );
+    <Provider store={store}>
+      <RecipesScreen />
+    </Provider>
+  )
 }
-
-export default App;
