@@ -1,5 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto+Slab:wght@700&family=Signika:wght@300;700&display=swap');
+
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
+
+.heading-1 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 2.25rem;
+}
+.heading-2 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.copy {
+  font-family: 'Signika', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+.copy-bold {
+  font-family: 'Signika', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+.emphasize {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
