@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { onCategoriesRequested, onMealsRequested } from './../../state/recipes/recipes.actions';
+import { onCategoriesRequested, onMealsRequested, onRecipeRequested } from './../../state/recipes/recipes.actions';
 import { CategoriesList } from './../components/categories-list';
 import { pluckCategories } from './../../state/recipes/recipes.selectors';
 import { MealsByCategory } from '../components/meals-by-category';
+import { Recipe } from '../components/recipe';
 
 export const RecipesScreen = () => {
   const dispatch = useDispatch()
   const categories = useSelector(pluckCategories);
   const [selectedCategoryName, setSelectedCategoryName] = useState();
+  const [selectedMealId, setSelectedMealId] = useState();
 
   useEffect(() => {
     dispatch(onCategoriesRequested())
@@ -20,7 +22,8 @@ export const RecipesScreen = () => {
   }
 
   const handleMealSelected = (mealId) => {
-    console.log('meal id is', mealId);
+    setSelectedMealId(mealId);
+    dispatch(onRecipeRequested(mealId));
   }
 
   return (
@@ -30,6 +33,7 @@ export const RecipesScreen = () => {
         selectedCategory={selectedCategoryName} 
         onSelected={handleOnCategorySelected} 
       />
+      <Recipe id={selectedMealId} />
       <MealsByCategory onMealSelected={handleMealSelected} category={selectedCategoryName} />
     </>
   )
