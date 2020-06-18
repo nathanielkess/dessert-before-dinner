@@ -13511,6 +13511,12 @@ video {
   font-size: 1.125rem;
 }
 
+.twoUpGrid {
+  display: grid;
+  grid: 270px 390px / repeat(2, 270px);
+  gap: 1rem;
+}
+
 @media (min-width: 640px){
   .sm\:space-y-0 > :not(template) ~ :not(template){
     --space-y-reverse: 0;

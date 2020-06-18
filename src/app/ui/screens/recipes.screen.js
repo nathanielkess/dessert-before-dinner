@@ -27,14 +27,14 @@ export const RecipesScreen = () => {
   }
 
   return (
-    <div className="mx-auto max-w-lg">
+    <div className="mx-auto max-w-4xl">
       <CategoriesList 
         categories={categories} 
         selectedCategory={selectedCategoryName} 
         onSelected={handleOnCategorySelected} 
       />
-      <Recipe id={selectedMealId} />
       <MealsByCategory onMealSelected={handleMealSelected} category={selectedCategoryName} />
+      <Recipe id={selectedMealId} />
     </div>
   )
 }
