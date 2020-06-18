@@ -3,18 +3,18 @@ import { PillButton } from '../../../design-system/components'
 
 export const CategoriesList = ({
   onSelected = () => {},
-  selectedId,
+  selectedCategory,
   categories,
 }) => {
-  const handleClick = (id) => () => onSelected(id);
+  const handleClick = (categoryName) => () => onSelected(categoryName);
   return (
     <>
       {
         categories.map(({id, name}) => (
           <PillButton 
-            onClick={handleClick(id)}
+            onClick={handleClick(name)}
             key={id}
-            on={selectedId === id}
+            on={selectedCategory === name}
           >
             {name}
           </PillButton>
