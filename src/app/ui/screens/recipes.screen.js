@@ -19,6 +19,10 @@ export const RecipesScreen = () => {
     dispatch(onMealsRequested(categoryName));
   }
 
+  const handleMealSelected = (mealId) => {
+    console.log('meal id is', mealId);
+  }
+
   return (
     <>
       <CategoriesList 
@@ -26,7 +30,7 @@ export const RecipesScreen = () => {
         selectedCategory={selectedCategoryName} 
         onSelected={handleOnCategorySelected} 
       />
-      <MealsByCategory category={selectedCategoryName} />
+      <MealsByCategory onMealSelected={handleMealSelected} category={selectedCategoryName} />
     </>
   )
 }
