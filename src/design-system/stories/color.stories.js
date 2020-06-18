@@ -2,7 +2,7 @@ import React from 'react';
 
 export default {
   title: 'Color',
-};
+}
 
 const ColorCard = ({ className, children }) => (
   <div className={`font-sans px-5 flex flex-1 items-center justify-center content-center h-16 m-2 rounded ${className}`}>
@@ -20,4 +20,4 @@ export const Colors = () => (
     <ColorCard className="bg-blue-xxl">blue-m</ColorCard>
     <ColorCard className="bg-salmon-m">blue-m</ColorCard>
   </div>
-);
+)
