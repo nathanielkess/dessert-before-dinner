@@ -6,7 +6,9 @@ import { pluckCategories } from './../../state/recipes/recipes.selectors';
 import { MealsByCategory } from './../components/meals-by-category';
 import { Recipe } from './../components/recipe';
 
-export const RecipesScreen = () => {
+export const RecipesScreen = ({
+  className = ''
+}) => {
   const dispatch = useDispatch()
   const categories = useSelector(pluckCategories);
   const [selectedCategoryName, setSelectedCategoryName] = useState();
@@ -27,7 +29,7 @@ export const RecipesScreen = () => {
   }
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div className={`mx-auto max-w-4xl ${className}`}>
       <CategoriesList 
         categories={categories} 
         selectedCategory={selectedCategoryName} 
