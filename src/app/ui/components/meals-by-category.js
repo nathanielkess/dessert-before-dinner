@@ -14,15 +14,17 @@ export const MealsByCategory = ({
 
   return (
     <div className="flex justify-center mt-16">
-      <div className="twoUpGrid">
-        {
-          meals.map(({ id, title, thumb }) => (
-            <Clickable key={id} onClick={handleClick(id)}>
-              <FigureCardVertical title={title} src={thumb} />
-            </Clickable>
-          ))
-        }
-      </div>
+      { category && (
+        <div className="twoUpGrid">
+          {
+            meals.map(({ id, title, thumb }) => (
+              <Clickable key={id} onClick={handleClick(id)}>
+                <FigureCardVertical title={title} src={thumb} alt={`photograph of ${title}`} />
+              </Clickable>
+            ))
+          }
+        </div>
+      )}
     </div>
   )
 }

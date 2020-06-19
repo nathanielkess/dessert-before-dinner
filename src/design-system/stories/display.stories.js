@@ -14,7 +14,7 @@ export default {
 
 export const ImageBox = () => {
   return (
-    <ImageBoxComponent src="https://www.themealdb.com/images/category/beef.png" />
+    <ImageBoxComponent src="https://www.themealdb.com/images/category/beef.png" alt={beef} />
   )
 }
 

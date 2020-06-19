@@ -2,7 +2,6 @@ import React from 'react'
 
 export const ImageBox = ({
   className = '',
-  size,
   src,
   alt,
 }) => (

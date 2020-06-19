@@ -8,7 +8,7 @@ export const FigureCard = ({
   src,
 }) => (
   <figure className={`flex flex-row ${className}`}>
-    <ImageBox src={src} />
+    <ImageBox src={src} alt="title" />
     <figcaption className="ml-8">
       <h2 className="heading-2 text-blue-m mb-3">{title}</h2>
       {children}
