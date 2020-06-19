@@ -3,7 +3,8 @@ import {
   ImageBox as ImageBoxComponent,
   FigureCard as FigureCardComponent,
   FigureCardVertical as FigureCardVerticalComponent,
-  LinkButton
+  LinkButton,
+  Modal as ModalComponent
 } from './../components'
 
 
@@ -38,4 +39,12 @@ export const Test = () => {
       <p className="copy text-center">Lorem ipsom</p>
     </FigureCardVerticalComponent>
   )
+}
+
+export const Modal = () => {
+  return (
+    <ModalComponent onClose={() => { console.log('close clicked')}}>
+      <p>Modal</p>
+    </ModalComponent>
+  ) 
 }

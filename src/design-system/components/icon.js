@@ -43,8 +43,9 @@ export const Icon = ({
   name = 'github',
   size = 28,
   color = colors.black,
+  className,
   ...props
 }) => {
   const Component = svgIcons(size, color)[name];
-  return <Component {...props} />
+  return <Component {...props} className={className} />
 }
