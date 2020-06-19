@@ -38,3 +38,10 @@
   grid: 270px 390px / repeat(2, 270px);
   gap: 1rem;
 }
+
+.numeric { 
+  list-style-type: decimal
+}
+.numeric li {
+  margin-top: 1rem;
+}
