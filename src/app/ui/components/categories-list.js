@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { PillButton } from '../../../design-system/components'
 
 export const CategoriesList = ({
@@ -6,21 +6,22 @@ export const CategoriesList = ({
   selectedCategory,
   categories,
 }) => {
-  const handleClick = (categoryName) => () => onSelected(categoryName);
+  const handleClick = useCallback((categoryName) => { onSelected(categoryName) }, [categories]);
   return (
     <nav className="flex flex-row flex-wrap justify-center">
-      {
-        categories.map(({id, name}) => (
-          <PillButton 
-            onClick={handleClick(name)}
-            key={id}
-            on={selectedCategory === name}
-            className="mx-2 my-2"
-          >
-            {name}
-          </PillButton>
-        ))
-      }
+        {
+          categories.map(({id, name}) => (
+            <PillButton 
+              onClick={handleClick}
+              onClickValue={name}
+              key={id}
+              on={selectedCategory === name}
+              className="mx-2 my-2"
+            >
+              {name}
+            </PillButton>
+          ))
+        }
     </nav>
   )
 }
